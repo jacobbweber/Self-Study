@@ -1,0 +1,66 @@
+{
+    "build": {
+        "GlobalDefaults": {
+            "RootHyperVVMPath": "E:\\Hyper-V\\Virtual Machines\\",
+            "ISOPath": "D:\\Tech\\Labs\\installers\\Windows_Svr_2008_R2_64Bit_w_SP1.ISO"
+        },
+        "EnvironmentInformation": {
+            "ApplicationName": "My Hyper-V Lab",
+            "Subnet": "255.255.255.0",
+            "Gateway": "192.168.86.1",
+            "DNS1": "192.168.86.50",
+            "DNS2": "192.168.86.51",
+            "Regions": {
+                "Production": "yes",
+                "Stage": "no",
+                "QA": "no",
+                "Test": "no",
+                "Development": "no",
+                "Training": "no"
+            }
+        },
+        "Servers": [
+            {
+                "VM": "2008v2",
+                "IP": "192.168.86.60",
+                "MemoryStartUpBytes": "2GB",
+                "MemoryMinimumBytes": "2GB",
+                "MemoryMaximumBytes": "4GB",
+                "NewVHDSizeBytes": "60",
+                "ProcessorCount": "1",
+                "DC1": "Yes",
+                "DC1DMZ": "No",
+                "DC2": "No",
+                "DC2DMZ": "No",
+                "Role": "App Server"
+            }
+        ],
+        "WindowsCluster": {
+            "WindowsClusterAutomation": "No",
+            "ClusterName": "labc",
+            "Nodes": [
+                "labdb1",
+                "labdb2"
+            ],
+            "Listeners": "billyld1",
+            "WitnessPath": "\\\\sp1-wsfcwit1\\witnesses"
+        },
+        "ActiveDirectory": {
+            "DC1": "sp1-labdc1",
+            "DC2": "sp1-labdc2",
+            "ActiveDirectoryAutomation": "No",
+            "SafeModeAdministratorPassword": "willywonkaGotNoCandy1987!",
+            "DatabasePath": "C:\\Windows\\NTDS",
+            "DomainMode": "WinThreshold",
+            "DomainName": "willywonka.com",
+            "DomainNetbiosName": "willywonka",
+            "ForestMode": "WinThreshold",
+            "LogPath": "C:\\Windows\\NTDS",
+            "SysvolPath": "C:\\Windows\\SYSVOL"
+        },
+        "LoadBalancer":{
+            "LoadBalancerAutomation": "No",
+            "URLStuff": ""
+        }
+    }
+}

@@ -1,0 +1,18 @@
+---
+apiVersion: awx.ansible.com/v1beta1
+kind: AWXRestore
+metadata:
+  name: awx-restore-2024-01-04
+  namespace: awx-demo
+spec:
+  deployment_name: awx
+
+  # Parameters to restore from AWXBackup object
+  #backup_name: awx-backup-2024-1-1
+
+  # Parameters to restore from existing files on PVC (without AWXBackup object)
+  #backup_pvc: awx-backup-claim
+  #backup_dir: /backups/tower-openshift-backup-2024-1-04-321149
+
+  # Uncomment to reveal "censored" logs
+  #no_log: false
