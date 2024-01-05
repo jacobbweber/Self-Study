@@ -4,7 +4,7 @@ The purpose of this project is to provide an implementation of AWX on Minikube u
 
 ## References
 
-- [minikube]([https://](https://minikube.sigs.k8s.io/docs/start/))
+- [minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [kubectl guides](<https://kubectl.docs.kubernetes.io/guides/>)
 - [kubectl Quick Reference](<https://kubernetes.io/docs/reference/kubectl/quick-reference/>)
 - [K3s - Lightweight Kubernetes](https://docs.k3s.io/) @v1.29.0+k3s1
