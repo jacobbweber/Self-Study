@@ -4,12 +4,12 @@ The purpose of this project is to provide an implementation of AWX on Minikube u
 
 ## References
 
-[minikube]([https://](https://minikube.sigs.k8s.io/docs/start/))
-[kubectl guides](<https://kubectl.docs.kubernetes.io/guides/>)
-[kubectl Quick Reference](<https://kubernetes.io/docs/reference/kubectl/quick-reference/>)
-[K3s - Lightweight Kubernetes](https://docs.k3s.io/) @v1.29.0+k3s1
-[INSTALL.md on ansible/awx](https://github.com/ansible/awx/blob/23.5.1/INSTALL.md) @23.5.1
-[README.md on ansible/awx-operator](https://github.com/ansible/awx-operator/blob/2.9.0/README.md) @2.9.0
+- [minikube]([https://](https://minikube.sigs.k8s.io/docs/start/))
+- [kubectl guides](<https://kubectl.docs.kubernetes.io/guides/>)
+- [kubectl Quick Reference](<https://kubernetes.io/docs/reference/kubectl/quick-reference/>)
+- [K3s - Lightweight Kubernetes](https://docs.k3s.io/) @v1.29.0+k3s1
+- [INSTALL.md on ansible/awx](https://github.com/ansible/awx/blob/23.5.1/INSTALL.md) @23.5.1
+- [README.md on ansible/awx-operator](https://github.com/ansible/awx-operator/blob/2.9.0/README.md) @2.9.0
 
 ## Setup Minikube on Windows 11
 
