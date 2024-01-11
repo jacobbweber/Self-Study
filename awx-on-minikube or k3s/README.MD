@@ -2,7 +2,7 @@
 
 ## Overview
 
-The purpose of this project is to provide an implementation of AWX on Minikube using Hyper-V or single node k3s on Centos8 using the AWX Operator. This contains the minimum configuration needed to build the instance while maintaining ownership of the data and passwords through the use of persistent volumes.
+The purpose of this project is to provide an basic implementation of AWX on Minikube using Hyper-V or single node k3s on Centos8 using the AWX Operator. I started this project knowing nothing about kubernetes or containers, but I needed AWX because...ansible GUI...This contains the minimum configuration needed to build the instance while maintaining ownership of the data and passwords through the use of persistent volumes. There are multiple versions (examples) of this project that may continue to grow as I learn new techniques.
 
 ## References
 
@@ -24,3 +24,13 @@ The purpose of this project is to provide an implementation of AWX on Minikube u
 
 ## Install AWX Operator
 
+[Deploy AWX](./docs/awx-setup.md)
+
+
+## V1
+
+Folllowing the offical AWX-Operator documentation examples
+
+## V2
+
+Learning to utilize secrets generator and adopting what I learned from the AWX-Operator official documentation. 
