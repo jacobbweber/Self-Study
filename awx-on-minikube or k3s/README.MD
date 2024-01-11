@@ -13,10 +13,6 @@ The purpose of this project is to provide an implementation of AWX on Minikube u
 - [INSTALL.md on ansible/awx](https://github.com/ansible/awx/blob/23.5.1/INSTALL.md) @23.5.1
 - [README.md on ansible/awx-operator](https://github.com/ansible/awx-operator/blob/2.9.0/README.md) @2.9.0
 
-## Setup Minikube on Windows 11
-
-[Minikube Setup](./docs/setup-minikube.md)
-
 ### Environment
 
 - Tested on:
@@ -27,94 +23,13 @@ The purpose of this project is to provide an implementation of AWX on Minikube u
   - AWX - 23.5.1
   - PostgreSQL 13
 
-### Setup Minikube
+## Setup Minikube on Windows 11
 
-Elevated Powershell
-
-```powershell
-
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-
-choco install kubernetes-cli -y
-
-choco install minikube -y
-
-minikube.exe config set driver hyperv
-
-minikube.exe start
-
-# Needed to enable the ingress controller to set the awx-operator resource ingress_type: ingress
-# I noticed I need to start this service anytime the minikube vm is powered off or stopped. probably a way to make persist.
-minikube.exe addons enable ingress
-
-# Once you know the minikube ip, modify your local hosts file to point to the hostname specified in the awx-operator (default: meta.name.example.com)
-# or specify a hostname: awx.willywonka.com in your awx-demo.yml file under ingress_type:.
-Add-Content -Path $env:windir\System32\drivers\etc\hosts -Value "`n172.29.41.85`tawx-demo.example.com" -Force
-
-# The IP Address might change for your minikube instance if you stop or rebuild it. Be sure to either add a dhcp reservation or update your hosts file to point to the right IP. For my purposes, I would just update my hostfile every time I start minikube to work on it. Long term this isn't ideal.
-
-# Validate After
-
-kubectl get po -A
-
-minikube dashboard
-```
-
-You should now be able to access the minikube dashboard from your internet browser using the link provided in the output of the minikube dashboard command. Leave this terminal running to keep the dashboard up.
-
-In a separate powershell terminal, you can start issuing commands like minikube, kubectl, or kustomize. These commands will directly interact with the minikube instance. You can run the rest of the AWX setup steps from here.
+[Minikube Setup](./docs/setup-minikube.md)
 
 ## Setup K3s on Centos 8
 
-### Centos 8 Environment
-
-- Tested on:
-  - RHEL 8 (Minimal)
-  - K3s - v1.29.0+k3s1
-- Products that will be deployed:
-  - AWX Operator 2.9.0
-  - AWX - 23.5.1
-  - PostgreSQL 13
-
-### Install K3s
-
-- Setup a Centos 8 VM
-
-- Disable firewalld (Recommeneded but not required) [Installation](https://docs.k3s.io/installation/requirements#operating-systems)
-
-```bash
-sudo systemctl disable firewalld --now
-```
-
-- Install git and curl
-
-```bash
-sudo dnf install -y git curl
-```
-
-> Note: Git is required for kustomization manifest to pull awx operator images.
-
-- Install a single-node server using the [install script](https://docs.k3s.io/installation/configuration#configuration-with-install-script)
-
-```bash
-curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.29.0+k3s1 sh -s - --write-kubeconfig-mode 644
-```
-
-- Deploy Project to Linux Host
-
-- You can either install git and clone the project or use something like WinSCP to copy the project. In this case, I used git to clone the repo to /opt/awx-on-k3s.
-
-- Create requried directorys for the Persistent Volumes defined in base/pv.yml. Be sure to do this in the awx-on-k3s directory.
-
-```bash
-sudo mkdir -p /data/postgres-13
-sudo mkdir -p /data/projects
-sudo chmod 755 /data/postgres-13
-sudo chown 1000:0 /data/projects
-sudo mkdir -p /data/backup
-```
-
-## The following Steps can be completed on either minikube or centos at this point
+[K3s Setup](./docs/setup-k3s.md)
 
 ## Install AWX Operator
 
