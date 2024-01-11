@@ -15,6 +15,8 @@ The purpose of this project is to provide an implementation of AWX on Minikube u
 
 ## Setup Minikube on Windows 11
 
+[Minikube Setup](./docs/setup-minikube.md)
+
 ### Environment
 
 - Tested on:
