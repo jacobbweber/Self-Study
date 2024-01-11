@@ -1,4 +1,14 @@
-### Setup Minikube
+# Setup Minikube
+
+## Environment
+
+- Tested on:
+  - Windows 11 Pro
+  - Minikube v1.32.0
+- Products that will be deployed:
+  - AWX Operator 2.9.0
+  - AWX - 23.5.1
+  - PostgreSQL 13
 
 Elevated Powershell
 

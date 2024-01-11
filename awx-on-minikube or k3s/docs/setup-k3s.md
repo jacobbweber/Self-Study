@@ -1,4 +1,4 @@
-### Centos 8 Environment
+# Centos 8 Environment
 
 - Tested on:
   - RHEL 8 (Minimal)
