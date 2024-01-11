@@ -1,0 +1,29 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Specify a custom namespace in which to install AWX
+namespace: awx-demo
+
+# Set the image tags to match the git version from above
+images:
+  - name: quay.io/ansible/awx-operator
+    newTag: 2.9.0
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+secretGenerator:
+  - name: awx-admin-password
+    type: Opaque
+    literals:
+      - password=Ansible123!
+
+  - name: awx-custom-secret-key
+    type: Opaque
+    literals:
+    - secret_key=MySuperSecureSecretKey123!
+
+resources:
+  # Find the latest tag here: https://github.com/ansible/awx-operator/releases
+  - github.com/ansible/awx-operator/config/default?ref=2.9.0
+  - awx-demo.yml
