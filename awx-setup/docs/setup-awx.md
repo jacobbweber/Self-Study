@@ -12,8 +12,6 @@ cd .\awx-on-minikube
 kubectl apply -k operator
 ```
 
-```
-
 - After the operator is running, you can verify the pods in the namespace are running:
 
 ```bash
