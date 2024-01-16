@@ -12,10 +12,6 @@ cd .\awx-on-minikube
 kubectl apply -k operator
 ```
 
-> Or you can run kubectl apply specifying the file directly.
-
-```bash
-kubectl apply -f v2/operator/kustomization.yml
 ```
 
 - After the operator is running, you can verify the pods in the namespace are running:
