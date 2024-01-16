@@ -19,13 +19,11 @@ This is primarily for educational purposes so it's important to note that this d
 
 Before you can deploy AWX you need an instance of kubernetes. I primarily use minikube on hyper-v to quickly test kubernetes manifests as I learn new techniques. For my segmented private lab environment I run a single-node k3s server on centos8.
 
-### Setup Minikube on Windows 11
 
-[Minikube Setup](./docs/setup-minikube-hyperv.md)
+| Minikube on Hyper-V    |  Minikube on Docker  | K3s on Centos8 |
+|:-----------------------------|:-----------------|:-----------------|
+| [Minikube Setup](./docs/setup-minikube-hyperv.md)    |   TBD   | [K3s Setup](./docs/setup-k3s.md) |
 
-### Setup K3s on Centos 8
-
-[K3s Setup](./docs/setup-k3s.md)
 
 ## Install AWX Operator
 
