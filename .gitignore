@@ -29,9 +29,6 @@ crash.log
 crash.*.log
 
 # local exclusions
-awx-on-k3s
-
-
 
 # TERRAFORM
 # Exclude all .tfvars files, which are likely to contain sensitive data, such as

@@ -1,0 +1,12 @@
+---
+apiVersion: awx.ansible.com/v1beta1
+kind: AWX
+metadata:
+  name: awx
+  namespace: awx-demo
+spec:
+  ingress_type: ingress
+  hostname: awx-demo.example.com
+  admin_user: admin
+  admin_password_secret: awx-demo-admin-password
+  secret_key_secret: awx-custom-secret-key

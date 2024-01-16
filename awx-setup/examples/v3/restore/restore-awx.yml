@@ -1,0 +1,18 @@
+---
+apiVersion: awx.ansible.com/v1beta1
+kind: AWXRestore
+metadata:
+  name: awx-restore-2024-01-16
+  namespace: awx-demo
+spec:
+  deployment_name: awx
+
+  # Parameters to restore from AWXBackup object
+  backup_name: awxbackup-2024-01-16
+
+  # Parameters to restore from existing files on PVC (without AWXBackup object)
+  backup_pvc: pvc-f55a5f31-8123-4c1b-a857-27fc5fc14f17
+  backup_dir: /tmp/hostpath-provisioner/awx-demo/awx-backup-backup-claim
+
+  # Uncomment to reveal "censored" logs
+  no_log: false
