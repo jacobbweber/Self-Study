@@ -19,3 +19,4 @@ secretGenerator:
 
 resources:
   - awx-demo.yml
+  - pv.yml

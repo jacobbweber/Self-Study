@@ -52,6 +52,8 @@ In a separate powershell terminal, you can start issuing commands like minikube,
 ```powershell
 minikube.exe start
 
+minikube.exe addons enable ingress
+
 # Define the new IP address and domain
 $domain = "awx-demo.example.com"
 
@@ -87,9 +89,4 @@ if (!($content -like "*$domain*")) {
     Set-Content -Path $filePath -Value $updatedContent
 }
 
-start-sleep 10
-kubectl apply -k .\examples\v3\operator
-
-start-sleep 10
-kubectl apply -k .\examples\v3\base
 ```
